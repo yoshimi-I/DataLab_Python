@@ -49,7 +49,6 @@
   "terminal.external.osxExec": "warp.app",
   "terminal.integrated.inheritEnv": false,
   "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
-  "workbench.activityBar.visible": true,
   "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
   "workbench.iconTheme": "material-icon-theme",
   "terminal.integrated.env.osx": {
