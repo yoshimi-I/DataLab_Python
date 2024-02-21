@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  python:
+    build:
+      context: ./docker/python/${PYTHON_VERSION}
+      dockerfile: Dockerfile
+    volumes:
+      - .:/data_lab
+    working_dir: /data_lab
+
+  node:
+    build:
+      context: ./docker/node
+      dockerfile: Dockerfile
+    volumes:
+      - .:/data_lab
+    working_dir: /data_lab
