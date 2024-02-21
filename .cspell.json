@@ -1,10 +1,11 @@
 {
   "version": "0.2",
   "language": "ja",
-  "words": ["Emoji", "chore","style","feat","breaking","issues","questions","notebooks","thesis","requirements"],
+  "words": ["Emoji", "chore","style","feat","breaking","issues","questions","notebooks","thesis","requirements","devcontainer"],
   "ignorePaths": [
     "LICENSE",
     "README.md",
-    "package.json"
+    "package.json",
+    ".devcontainer"
   ]
 }
