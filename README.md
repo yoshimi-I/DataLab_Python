@@ -1,4 +1,18 @@
-# python 研究環境
+<div align="center">
+
+<samp>
+
+# python research environment
+
+**Welcome to python research environment!!**
+
+</samp>
+
+</div>
+
+## 概要
+こちらは研究で使うpythonの環境になっております
+
 ## ディレクトリ構成
 ```md
 .
