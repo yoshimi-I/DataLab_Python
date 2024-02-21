@@ -30,7 +30,7 @@ module.exports = {
 
   // scopesの種類
   // 一つも指定されてない場合、scopeの質問は行われなくなる
-  scopes: ['notebooks', 'data', 'models', '環境構築','src','thesis','other'],
+  scopes: ['notebooks', 'data', 'models', 'requirements.txt','src','thesis','other'],
 
   // typesの種類を設定する
   types: {

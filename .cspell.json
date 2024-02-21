@@ -1,7 +1,7 @@
 {
   "version": "0.2",
   "language": "ja",
-  "words": ["Emoji", "chore","style","feat","breaking","issues","questions","notebooks","thesis"],
+  "words": ["Emoji", "chore","style","feat","breaking","issues","questions","notebooks","thesis","requirements"],
   "ignorePaths": [
     "LICENSE",
     "README.md",
