@@ -1,0 +1,16 @@
+FROM python:3.11-slim
+
+WORKDIR /data_lab
+
+# Poetryをインストール
+RUN pip install poetry
+
+# Poetryの設定ファイルをコピー
+COPY pyproject.toml poetry.lock* /data_lab/
+
+# Poetryを使用して依存関係をインストール
+RUN poetry config virtualenvs.create false && \
+    poetry install --no-interaction --no-ansi
+
+# アプリケーションのソースコードをコピー
+COPY . /data_lab
