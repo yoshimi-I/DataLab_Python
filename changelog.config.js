@@ -29,7 +29,6 @@ module.exports = {
   questions: ['type', 'scope', 'subject', 'body', 'breaking', 'issues', 'lerna'],
 
   // scopesの種類
-  // 一つも指定されてない場合、scopeの質問は行われなくなる
   scopes: ['notebooks', 'data', 'models', 'requirements.txt','src','thesis','other'],
 
   // typesの種類を設定する
@@ -84,8 +83,6 @@ module.exports = {
       emoji: '💍',
       value: 'test',
     },
-
-    // 以下、独自で追加したtypes
     config: {
       description: '設定ファイルの追加・修正',
       emoji: '⚙️',
