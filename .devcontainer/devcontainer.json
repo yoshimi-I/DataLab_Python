@@ -1,12 +1,11 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
-	"name": "Python3",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "dockerComposeFile": "../docker-compose.yml",
-  "service": "app",
-  "workspaceFolder": "/data_lab",
-  "shutdownAction": "stopCompose",
+	"name": "Python",
+	"build": {
+		"context": "..",
+		"dockerfile": "../docker/python/3.12/Dockerfile"
+	},
 	"customizations": {
 		"vscode": {
 			"extensions": [
