@@ -16,7 +16,7 @@ module.exports = {
     'ci',
     'perf',
     'config',
-    'package',
+    'package'
   ],
 
   // コミットメッセージの最大文字数
@@ -29,7 +29,7 @@ module.exports = {
   questions: ['type', 'scope', 'subject', 'body', 'breaking', 'issues', 'lerna'],
 
   // scopesの種類
-  scopes: ['notebooks', 'data', 'models', 'requirements.txt','src','thesis','other'],
+  scopes: ['notebooks', 'data', 'models', 'poetry.lock','src','thesis','other'],
 
   // typesの種類を設定する
   types: {
