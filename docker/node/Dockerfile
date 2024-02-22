@@ -5,7 +5,6 @@ WORKDIR /data_lab
 
 RUN npm install -g commitizen
 
-COPY package*.json ./
-RUN npm install
+COPY package.json package-lock.json* ./
 
-COPY . .
+RUN npm install

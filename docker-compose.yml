@@ -10,8 +10,8 @@ services:
 
   node:
     build:
-      context: ./docker/node
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ./docker/node/Dockerfile
     volumes:
       - .:/data_lab
     working_dir: /data_lab
