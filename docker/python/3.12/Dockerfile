@@ -14,3 +14,6 @@ RUN poetry config virtualenvs.create false && \
 
 # アプリケーションのソースコードをコピー
 COPY . /data_lab
+
+# コンテナを起動させ続けるための処理
+CMD ["tail", "-f", "/dev/null"]]
