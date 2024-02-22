@@ -2,18 +2,28 @@ FROM python:3.11-slim
 
 WORKDIR /data_lab
 
-# Poetryをインストール
 RUN pip install poetry
 
-# Poetryの設定ファイルをコピー
 COPY pyproject.toml poetry.lock* /data_lab/
 
-# Poetryを使用して依存関係をインストール
-RUN poetry config virtualenvs.create false && \
-    poetry install --no-interaction --no-ansi
 
-# アプリケーションのソースコードをコピー
-COPY . /data_lab
+RUN poetry config virtualenvs.create false \
+    && poetry install --no-interaction --no-ansi
 
-# コンテナを起動させ続けるための処理
-CMD ["tail", "-f", "/dev/null"]]
+# npm czを使いたいのでnodeを入れる
+RUN apt-get update \
+    && apt-get install -y curl gnupg2 \
+    && curl -sL https://deb.nodesource.com/setup_16.x | bash - \
+    && apt-get install -y nodejs \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY package.json package-lock.json* /data_lab/
+
+RUN npm install
+
+
+COPY . /data_lab/
+
+# コンテナを起動し続ける
+CMD ["tail", "-f", "/dev/null"]
