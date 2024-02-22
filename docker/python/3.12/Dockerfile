@@ -4,7 +4,7 @@ WORKDIR /data_lab
 
 RUN pip install poetry
 
-COPY pyproject.toml poetry.lock* /data_lab/
+COPY ./docker/python/3.12/pyproject.toml ./docker/python/3.12/poetry.lock* /data_lab/
 
 
 RUN poetry config virtualenvs.create false \
@@ -12,11 +12,9 @@ RUN poetry config virtualenvs.create false \
 
 # npm czを使いたいのでnodeを入れる
 RUN apt-get update \
-    && apt-get install -y curl gnupg2 \
-    && curl -sL https://deb.nodesource.com/setup_16.x | bash - \
-    && apt-get install -y nodejs \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get install nodejs -y \
+    && apt-get install npm -y \
+    && update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10 
 
 COPY package.json package-lock.json* /data_lab/
 
