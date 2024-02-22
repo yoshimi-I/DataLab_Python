@@ -3,6 +3,10 @@
 commit:
 	npx git-cz
 
-# pythonのversionを使う
+# pythonのversionを指定してdockerコンテナを立ち上げる
 up:
 	@./bin/setup_docker.sh
+
+# pythonのバージョンを変更
+version:
+	@./bin/rewrite_version.sh
