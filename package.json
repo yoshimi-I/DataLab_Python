@@ -17,5 +17,8 @@
   },
   "dependencies": {
     "lint-staged": "^15.2.2"
+  },
+  "lint-staged": {
+    "*.py": "pipenv run ruff check --fix"
   }
 }
