@@ -16,7 +16,8 @@ COPY ./docker/python/${PYTHON_VERSION}/pyproject.toml ./docker/python/${PYTHON_V
 
 RUN poetry config virtualenvs.create false \
     && poetry lock --no-update \
-    && poetry install --no-interaction --no-ansi
+    && poetry install --no-interaction --no-ansi \
+    && poetry install ruff
 
 # npm czを使いたいのでnodeを入れる
 RUN apt-get update \
