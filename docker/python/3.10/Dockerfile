@@ -1,10 +1,12 @@
 FROM python:3.10-slim
 
-WORKDIR /data_lab
+ENV PYTHON_VERSION=3.10
+
+WORKDIR /workspaces/DataLab_Python
 
 RUN pip install poetry
 
-COPY ./docker/python/3.10/pyproject.toml ./docker/python/3.10/poetry.lock* /data_lab/
+COPY ./docker/python/${PYTHON_VERSION}/pyproject.toml ./docker/python/${PYTHON_VERSION}/poetry.lock* /workspaces/DataLab_Python/
 
 
 RUN poetry config virtualenvs.create false \
@@ -14,14 +16,11 @@ RUN poetry config virtualenvs.create false \
 RUN apt-get update \
     && apt-get install nodejs -y \
     && apt-get install npm -y \
-    && update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10 
+    && update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
 
-COPY package.json package-lock.json* /data_lab/
+COPY package.json package-lock.json* /workspaces/DataLab_Python/
 
 RUN npm install
 
 
-COPY . /data_lab/
-
-# コンテナを起動し続ける
-CMD ["tail", "-f", "/dev/null"]
+COPY . /workspaces/DataLab_Python
