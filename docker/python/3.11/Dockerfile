@@ -5,8 +5,13 @@ ENV PYTHON_VERSION=3.11
 WORKDIR /workspaces/DataLab_Python
 
 RUN pip install poetry
+# 既存のファイルを削除
+RUN if [ -f /workspaces/DataLab_Python/pyproject.toml ]; then rm /workspaces/DataLab_Python/pyproject.toml; fi && \
+    if [ -f /workspaces/DataLab_Python/poetry.lock ]; then rm /workspaces/DataLab_Python/poetry.lock; fi
 
+# 新しいファイルをコピー
 COPY ./docker/python/${PYTHON_VERSION}/pyproject.toml ./docker/python/${PYTHON_VERSION}/poetry.lock* /workspaces/DataLab_Python/
+
 
 
 RUN poetry config virtualenvs.create false \
