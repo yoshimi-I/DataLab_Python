@@ -39,7 +39,12 @@
           "files.trimTrailingWhitespace": false
         },
         "[python]": {
-          "editor.formatOnType": true
+          "editor.formatOnSaveMode": "file",
+          "editor.formatOnSave": true,
+          "editor.codeActionsOnSave": {
+            "source.fixAll.ruff": true,
+            "source.organizeImports.ruff": true
+          }
         },
         "cSpell.userWords": ["chatgpt", "Monokai", "techtrain"],
         "editor.acceptSuggestionOnEnter": "on",
