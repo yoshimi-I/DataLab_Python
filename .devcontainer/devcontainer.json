@@ -6,10 +6,15 @@
 		"context": "..",
 		"dockerfile": "../docker/python/3.12/Dockerfile"
 	},
+  "mounts": [
+    "source=${localWorkspaceFolder}/docker/python/3.12/pyproject.toml,target=/workspaces/DataLab_Python/pyproject.toml,type=bind,consistency=cached",
+    "source=${localWorkspaceFolder}/docker/python/3.12/poetry.lock,target=/workspaces/DataLab_Python/poetry.lock,type=bind,consistency=cached"
+  ],
 	"customizations": {
 		"vscode": {
 			"extensions": [
         "dbaeumer.vscode-eslint",
+        "charliermarsh.ruff",
         "eamodio.gitlens",
         "EditorConfig.EditorConfig",
         "esbenp.prettier-vscode",
@@ -92,19 +97,4 @@
       }
 		}
 	}
-
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "pip3 install --user -r requirements.txt",
-
-	// Configure tool-specific properties.
-	// "customizations": {},
-
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
 }
