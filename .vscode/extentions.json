@@ -35,6 +35,10 @@
     "streetsidesoftware.code-spell-checker",
     "styled-components.vscode-styled-components",
     "twxs.cmake",
-    "vscode-icons-team.vscode-icons"
+    "vscode-icons-team.vscode-icons",
+    "dbaeumer.vscode-eslint",
+    "charliermarsh.ruff",
+    "GitHub.copilot-labs",
+    "ms-azuretools.vscode-docker"
   ]
 }
