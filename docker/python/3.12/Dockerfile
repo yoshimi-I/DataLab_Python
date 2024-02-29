@@ -11,13 +11,10 @@ RUN if [ -f /workspaces/DataLab_Python/pyproject.toml ]; then rm /workspaces/Dat
     if [ -f /workspaces/DataLab_Python/poetry.lock ]; then rm /workspaces/DataLab_Python/poetry.lock; fi
 
 # 新しいファイルをコピー
-COPY ./docker/python/${PYTHON_VERSION}/pyproject.toml ./docker/python/${PYTHON_VERSION}/poetry.lock* /workspaces/DataLab_Python/
-
-
+COPY ./docker/python/${PYTHON_VERSION}/pyproject.toml ./docker/python/${PYTHON_VERSION}/poetry.lock /workspaces/DataLab_Python/
 
 RUN poetry config virtualenvs.create false \
-    && poetry lock --no-update \
-    && poetry install --no-interaction --no-ansi
+    && poetry install --no-interaction --no-ansi --no-dev
 
 # npm czを使いたいのでnodeを入れる
 RUN apt-get update \
