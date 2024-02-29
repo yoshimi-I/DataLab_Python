@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "commit": "npx git-cz"
+    "commit": "npx git-cz",
+    "lint-staged": "lint-staged",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
@@ -13,12 +15,13 @@
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "git-cz": "^4.9.0",
-    "husky": "^9.0.11"
-  },
-  "dependencies": {
+    "husky": "^9.0.11",
     "lint-staged": "^15.2.2"
   },
+  "dependencies": {
+  },
   "lint-staged": {
-    "*.py": "pipenv run ruff check --fix"
+    "*.py": "poetry run ruff check --fix"
   }
 }
+
