@@ -7,8 +7,8 @@
 		"dockerfile": "../docker/python/3.12/Dockerfile"
 	},
   "mounts": [
-    "source=${localWorkspaceFolder}/docker/python/3.12/pyproject.toml,type=bind,consistency=cached",
-    "source=${localWorkspaceFolder}/docker/python/3.12/poetry.lock,type=bind,consistency=cached"
+    "source=${localWorkspaceFolder}/docker/python/3.12/pyproject.toml,target=/workspaces/DataLab_Python/pyproject.toml,type=bind,consistency=cached",
+    "source=${localWorkspaceFolder}/docker/python/3.12/poetry.lock,target=/workspaces/DataLab_Python/poetry.lock,type=bind,consistency=cached"
   ],
 	"customizations": {
 		"vscode": {

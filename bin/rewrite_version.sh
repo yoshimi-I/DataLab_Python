@@ -28,12 +28,9 @@ do
 done
 
 # devcontainer.jsonを更新
-sed -i "" "s|\"dockerfile\": \"../docker/python/.*|\"dockerfile\": \"../docker/python/$PYTHON_VERSION/Dockerfile\"|g" .devcontainer/devcontainer.json
-
-
 sed -i.bak -e "s|\"dockerfile\": \"../docker/python/.*|\"dockerfile\": \"../docker/python/$PYTHON_VERSION/Dockerfile\"|g" \
-           -e "s|source=\${localWorkspaceFolder}/docker/python/.*/pyproject.toml|source=\${localWorkspaceFolder}/docker/python/$PYTHON_VERSION/pyproject.toml|g" \
-           -e "s|source=\${localWorkspaceFolder}/docker/python/.*/poetry.lock|source=\${localWorkspaceFolder}/docker/python/$PYTHON_VERSION/poetry.lock|g" \
+            -e "s|source=\${localWorkspaceFolder}/docker/python/[^/]*/pyproject.toml|source=\${localWorkspaceFolder}/docker/python/$PYTHON_VERSION/pyproject.toml|g" \
+            -e "s|source=\${localWorkspaceFolder}/docker/python/[^/]*/poetry.lock|source=\${localWorkspaceFolder}/docker/python/$PYTHON_VERSION/poetry.lock|g" \
            .devcontainer/devcontainer.json
 
 
